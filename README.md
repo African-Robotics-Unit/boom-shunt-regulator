@@ -1,2 +1,2 @@
 # Shunt Regulator
-Schematic and firmware for a shunt regulator
+Schematic and firmware for a very simple shunt regulator
