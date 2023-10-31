@@ -9,8 +9,11 @@ Schematic and firmware for a very simple shunt regulator based on the [ODrive](h
 <img src="schematic.png" width="500">
 </p>
 
-The amount of power dissipated in the brake resistor is controlled via the 20kHz PWM signal going to the MOSFET driver. The duty cycle is ramped up from 0% for any voltages above `overvoltage_ramp_start` and maxes out at 100% for voltages at or above `overvoltage_ramp_end`. This provides a smoother fade in or out, as opposed to suddenly dumping the maximum possible power throught the resistor.
+The amount of power dissipated in the brake resistor is controlled via the 20kHz PWM signal going to the MOSFET driver. The duty cycle is ramped up from 0% for any voltages above `overvoltage_ramp_start` and maxes out at 100% for voltages at or above `overvoltage_ramp_end`. This provides a smoother fade in or out, as opposed to suddenly dumping the maximum possible power through the resistor.
 
-`overvoltage_ramp_start` and `overvoltage_ramp_end` must be set in the firmware based on the power supply voltage. `overvoltage_ramp_start` should be at least 2V to 4V above the power supply voltage. Setting this value too close or below the power supply voltage will result in a fried MOSFET or brake resistor. If the resistor gets warm without the motors braking, increase this value. Set `overvoltage_ramp_end` to a value which is below the power supplies overvoltage protection and the motor's maximum rated voltage, but not too close to `overvoltage_ramp_start`.
+`overvoltage_ramp_start` and `overvoltage_ramp_end` must be set in the firmware based on the power supply voltage. 
+These are measured by a 1/20 voltage divider (not 100% accurate due to resistor tolerances).
+`overvoltage_ramp_start` should be at least 2V to 4V above the power supply voltage. Setting this value too close or below the power supply voltage will result in a fried MOSFET or brake resistor. If the resistor gets warm without the motors braking, increase this value. Set `overvoltage_ramp_end` to a value which is below the power supplies overvoltage protection and the motor's maximum rated voltage, but not too close to `overvoltage_ramp_start`.
 
 The circuit in the lab has a maximum rated voltage of 65V.
+It has been altered from its original design to use an Arduino Nano 33 IoT. 
