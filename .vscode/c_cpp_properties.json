@@ -59,7 +59,7 @@
                 ]
             },
             "defines": [
-                "PLATFORMIO=60111",
+                "PLATFORMIO=60116",
                 "ARDUINO_SAMD_NANO_33_IOT",
                 "CRYSTALLESS",
                 "__SAMD21G18A__",
@@ -75,7 +75,7 @@
             ],
             "cStandard": "gnu11",
             "cppStandard": "gnu++11",
-            "compilerPath": "C:/Users/gfben/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc.exe",
+            "compilerPath": "C:/Users/gfben/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/bin/arm-none-eabi-gcc.exe",
             "compilerArgs": [
                 "-mcpu=cortex-m0plus",
                 "-mthumb",
